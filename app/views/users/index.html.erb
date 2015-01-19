@@ -1,0 +1,13 @@
+<div class="jumbotron">
+	<h1>"Hello, Word. The best vocabulary learning tool for your needs."</h1>
+	<p>...</p>
+	<p><a class="btn btn-primary btn-lg" href="/login" role="button">Learn more</a></p>
+</div>
+
+<h1>Log in Here</h1>
+
+<% if current_user %>
+	Logged in as <%= current_user.username %> | <%= link_to "Logout", :logout %>
+	<% else %>
+	<%= link_to "Login", :login %> | <%= link_to "Signup", :signup %>
+	<% end %>
