@@ -1,6 +1,6 @@
-Sign Up
+Sign Up Page
 
-<h1>Sign up and start learning some vocabulary!</h1>
+<h1>Welcome to Word.Smith! Sign up and let's learn something!</h1>
 
 
 <ul>
@@ -23,11 +23,12 @@ Sign Up
 </div>
 
 <%= form_for(@user) do |f|%>
-	email:
-	<%= f.text_field :email %>
-
+	
 	username:
 	<%= f.text_field :username %>
+
+	email:
+	<%= f.text_field :email %>
 
 	password:
 	<%= f.password_field :password %>
@@ -35,5 +36,6 @@ Sign Up
 	confirm your password:
 	<%= f.password_field :password_confirmation %>
 
-<%= f.submit "Sign up" %>
+	<%= f.submit "Sign up" %>
+
 <% end %>
