@@ -2,6 +2,8 @@ class User
   include Mongoid::Document
   include ActiveModel::SecurePassword
 
+  has_many :flashcards
+
   field :username, type: String
   field :email, type: String
   
