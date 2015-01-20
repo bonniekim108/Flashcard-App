@@ -1,5 +1,10 @@
 class UsersController < ApplicationController
 
+	
+	def show
+		@user = User.find(params[:id])
+	end
+
 	def index
 	end
 
@@ -16,6 +21,18 @@ class UsersController < ApplicationController
 			render :new
 		end
 	end
+
+	def edit
+		@user = User.find(params[:id])
+	end
+
+	def user_params
+		params.require(:user).permit(:username, :email, :password, :password_confirmation)
+	end
+end
+
+
+
 end
 
 
