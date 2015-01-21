@@ -5,8 +5,8 @@ class FlashcardsController < ApplicationController
 	end
 
 	def show
+		current_user
 		@flashcard = Flashcard.find(params[:id])
-
 	end
 
 	def new
@@ -45,6 +45,13 @@ class FlashcardsController < ApplicationController
 		redirect_to flashcards_path
 
 	end
+
+	private
+
+	def flashcard_params
+		params.require(:flashcard).permit(:word, :pronunciation, :definition, :notes)
+	end
+end
 
 	
 
