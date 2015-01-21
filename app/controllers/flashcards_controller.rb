@@ -5,8 +5,8 @@ class FlashcardsController < ApplicationController
 	end
 
 	def show
-		current_user
 		@flashcard = Flashcard.find(params[:id])
+
 	end
 
 	def new
@@ -46,9 +46,7 @@ class FlashcardsController < ApplicationController
 
 	end
 
-	def flashcard_params
-		params.require(:flashcard).permit(:wo)
-			
+	
 
 
 

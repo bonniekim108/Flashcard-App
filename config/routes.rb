@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root 'static_pages#home'
+
 
   #root 'users#index'
 
@@ -14,6 +14,7 @@ Rails.application.routes.draw do
 
   resources :users
   resources :sessions
+  resources :flashcards
 
 
   # The priority is based upon order of creation: first created -> highest priority.
