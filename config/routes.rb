@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   root 'users#index'
 
-  get 'signup' => 'users#new', as: :signup
+  get '/signup' => 'users#index', as: :signup
 
   get '/login' => 'sessions#new', as: :login
 
@@ -12,7 +12,14 @@ Rails.application.routes.draw do
 
   get '/logout' => 'sessions#destroy', as: :logout
 
-  resources :users
+  get '/wordnik' => 'wordnik#index'
+
+  # get '/wordnik' =>
+
+  resources :users do
+    resources :flashcards
+  end
+
   resources :sessions
   resources :flashcards
 

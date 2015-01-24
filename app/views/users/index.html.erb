@@ -1,13 +1,32 @@
-<div class="jumbotron">
-	<h1>"Team up with Word Ninja, and let's learn some vocabulary!"</h1>
-	<p>...</p>
-	<p><a class="btn btn-primary btn-lg" href="/login" role="button">Learn more</a></p>
+<div class = "header">
+    <h2>Well.Said.</h2>
 </div>
 
-<h1>Log in Here</h1>
+<div class = "intro">
+ 	<h4>Thanks for stopping by Well.Said. How does it work?</h4>
+ 		<p>Type the word into the search box. You will see the word's pronunciation, its definitions, and related words. The word attributes you choose will be added to a flashcard. In addition, you can add notes to help you understand the word more comprehensively.</p>
+</div>
 
-<% if current_user %>
-	Logged in as <%= current_user.username %> | <%= link_to "Logout", :logout %>
-	<% else %>
-	<%= link_to "Login", :login %> | <%= link_to "Signup", :signup %>
-	<% end %>
+<div class = "signup">
+  <ul>
+    <% @user.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+  <%= form_for(@user) do |f|%>
+    username:
+    <%= f.text_field :username %><br>
+
+    email:
+    <%= f.text_field :email %><br>
+
+    password:
+    <%= f.password_field :password %><br>
+
+    confirm your password:
+    <%= f.password_field :password_confirmation %><br>
+
+    <%= f.submit "Sign up" %>
+
+  <% end %>
+</div>

@@ -1,11 +1,11 @@
 class FlashcardsController < ApplicationController
+	before_action :authorize
 
 	def index
-		@flashcards = Flashcard.all
-	end
+		@flashcards = current_user.flashcards
+	end	
 
 	def show
-		current_user
 		@flashcard = Flashcard.find(params[:id])
 	end
 
@@ -15,6 +15,7 @@ class FlashcardsController < ApplicationController
 
 	def create
 		@flashcard = Flashcard.new(flashcard_params)
+		@flashcard.user = current_user
 
 		if @flashcard.save
 			redirect_to flashcards_path
@@ -30,7 +31,7 @@ class FlashcardsController < ApplicationController
 	def update
 		@flashcard = Flashcard.find(params[:id])
 
-		if @flashcard.upate(flashcard_params)
+		if @flashcard.update(flashcard_params)
 			redirect_to flashcards_path
 		else
 			render :edit
@@ -49,7 +50,7 @@ class FlashcardsController < ApplicationController
 	private
 
 	def flashcard_params
-		params.require(:flashcard).permit(:word, :pronunciation, :definition, :notes)
+		params.require(:flashcard).permit(:word, :pronunciation, :definition, :related_words, :notes)
 	end
 end
 

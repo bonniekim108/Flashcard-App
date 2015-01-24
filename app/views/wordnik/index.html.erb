@@ -1,0 +1,22 @@
+<h1>Word Search</h1>
+
+<%= @word_definitions.inspect %>
+
+
+
+<br>
+<br>
+<br>
+<br>
+
+<% @word_definitions.each do |definition| %>
+ <%= definition["word"] %>
+ <%= definition["text"] %>
+
+  <br>
+  <br>
+<% end %>
+
+  <%= @word_pronunciations.each do |pronunciation| %>
+    <%= %>
+<% end %>

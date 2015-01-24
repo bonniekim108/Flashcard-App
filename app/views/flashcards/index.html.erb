@@ -1,2 +1,29 @@
-<h5><%= link_to 'Create new flashcard', new_flashcard_path %></h5>
+<div>
+  <h1>Well Said</h1>
+  <p>
+    <%= form_tag('/wordnik', :method=>'get') do %>
+      Look up a word: 
+      <%= text_field_tag('word') %>
+      <%= submit_tag('Search') %>
+    <% end %>
+  </p>
+</div>
 
+
+<table>
+  <tr>
+    <th>Word</th>
+    <th>Pronunciation</th>
+    <th>Definition</th>
+    <th>Related Words</th>
+
+  </tr>
+  <% @flashcards.each do |flashcard| %>
+    <tr>
+      <td><%= flashcard.word %></td>
+      <td><%= flashcard.pronunciation %></td>
+      <td><%= flashcard.definition %></td>
+      <td><%= flashcard.related_words%></td>
+    </tr>
+  <% end %>  
+</table>
