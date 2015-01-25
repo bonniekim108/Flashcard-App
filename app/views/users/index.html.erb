@@ -1,32 +1,35 @@
-<div class = "header">
-    <h2>Well.Said.</h2>
-</div>
+<div class='center jumbotron'>
+  <h1>GO FISH</h1>
+  <br>
+  <br>
+  <br>
+  <div class="container">
+    <div class='row'>
+      <div class = 'col-md-5'>
+   	    <h2><small>Why the name, "Go Fish"?</small></h2>  
+   		  <p>A wise person once said that teaching another person a skill (like fishing!) equips that individual for the rest of his life. At Go Fish, we support your educational journey - hence, the name. We believe that this is the best vocabulary app for your needs. But don't just take our word for it - try it out for yourself!</p>
+      </div>
+            <div class="col-sm-5 col-md-offset-2">
+              <%= form_for @user do |f| %>
+              <%= f.label :username %>
+              <%= f.text_field :username %>
 
-<div class = "intro">
- 	<h4>Thanks for stopping by Well.Said. How does it work?</h4>
- 		<p>Type the word into the search box. You will see the word's pronunciation, its definitions, and related words. The word attributes you choose will be added to a flashcard. In addition, you can add notes to help you understand the word more comprehensively.</p>
-</div>
+              <%= f.label :email %>
+              <%= f.email_field :email %>
 
-<div class = "signup">
-  <ul>
-    <% @user.errors.full_messages.each do |message| %>
-    <li><%= message %></li>
-    <% end %>
-  </ul>
-  <%= form_for(@user) do |f|%>
-    username:
-    <%= f.text_field :username %><br>
+              <%= f.label :password %>
+              <%= f.password_field :password %>
 
-    email:
-    <%= f.text_field :email %><br>
+              <%= f.label :password_confirmation, "Confirmation" %>
+              <%= f.password_field :password_confirmation %>
 
-    password:
-    <%= f.password_field :password %><br>
+              <%= f.submit "Create my account", class: "btn btn-primary" %>
+              <% end %>
+            </div>
+    </div>
+  </div>
+       
+   
 
-    confirm your password:
-    <%= f.password_field :password_confirmation %><br>
 
-    <%= f.submit "Sign up" %>
-
-  <% end %>
-</div>
+   

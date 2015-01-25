@@ -1,3 +1,31 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+
+body {
+
+  padding-top: 60px;
+}
+
+
+h1 {
+  font-size: 60px; 
+  position: relative;
+  text-align: left;
+  left: 55px;
+}
+
+
+
+.navbar-text {
+  position: relative;
+  right: 70px;
+  font-size: 17px;
+}
+
+.form {
+ 
+  font-size: 18px;
+}
+
