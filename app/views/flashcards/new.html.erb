@@ -1,10 +1,19 @@
-
-<div class="create_flashcard">
-    <%= form_tag('/wordnik', :method=>'get') do %>
-      Look up a word: <br>
-      <%= text_field_tag('word') %>
-      <%= submit_tag('Search') %>
-    <% end %>
+<div class="row">
+  <div class="col-md-6 col-md-offset-5">
+    <div class="create_flashcard">
+        <%= form_tag('/wordnik', :method=>'get') do %>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <h3>Look up any word:</h3> 
+          <br>
+          <%= text_field_tag('word') %>
+          <%= submit_tag('Search') %>
+        <% end %>
+    </div>
+  </div>
 </div>
 
 
