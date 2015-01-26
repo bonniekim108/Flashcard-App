@@ -1,22 +1,24 @@
-<h1>Go Fish</h1>
-<h3>Your Flashcards</h3>
+<br>
+<br>
+<br>
+<br>
  
-<div>
-  <label><input id="striped" type="checkbox"> striped</label>
-</div>
-    <table id="table-style" data-url="data1.json" data-height="400" data-row-style="rowStyle">
-      <thead>
-        <tr>
-          <th data-field="word" class="col-md-2">WORD</th>
-          <th data-field="pronunciation" class="col-md-2">PRONUNCIATION</th>
-          <th data-field="definition" class="col-md-4">DEFINITION</th>
-          <th data-field="related_words" class="col-md-3">RELATED WORDS</th>
-        </tr>
-      </thead>
-    </table>      
-          
 
-      <tbrdy>  
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+    <table class="table table-striped">
+    <h3>Your Flashcards</h3>
+    <br>
+    <br>
+    <thead>
+      <tr>
+        <th>WORD</th>
+        <th>PRONUNCIATION</th> 
+        <th>DEFINITION</th>
+        <th>RELATED WORDS</th>
+      </tr>
+    </thead>  
+      <tbody>  
         <% @flashcards.each do |flashcard| %>
           <tr>
             <td><%= flashcard.word %></td>
@@ -27,9 +29,13 @@
         <% end %> 
       </tbody> 
     </table>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
     <%= link_to 'New flashcard', new_flashcard_path %>
-  </div>
-</div>
+ 
 
 
 

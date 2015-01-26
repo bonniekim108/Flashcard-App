@@ -3,11 +3,13 @@
 @import "bootstrap";
 
 
+
 body {
 
   padding-top: 60px;
+  background-color: #B2BFA8;
+ 
 }
-
 
 h1 {
   font-size: 60px; 
@@ -16,7 +18,12 @@ h1 {
   left: 55px;
 }
 
-
+.navbar-fixed-top {
+ background-color: #9BE2EE;
+ border-bottom-color :#FFFFFF;
+ padding-top: 13px;
+ padding-bottom: 13px;
+}
 
 .navbar-text {
   position: relative;
@@ -24,6 +31,9 @@ h1 {
   font-size: 17px;
 }
 
+.center jumbotron {
+  background-color: #BFAB99;
+}
 .form {
  
   font-size: 18px;
