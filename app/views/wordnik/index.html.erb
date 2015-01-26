@@ -1,31 +1,15 @@
-<h1>Word Search</h1>
-
-<%= @word_pronunciations.inspect %>
-
+<h1>Word Results</h1>
 
 
 <br>
 <br>
-<br>
-<br>
 
-<% @word_definitions.each do |definition| %>
- <%= definition["word"] %>
- <%= definition["text"] %>
-
-  <br>
-  <br>
-<% end %>
-
-<%= @word_pronunciations.each do |pronunciation| %>
-  <%= %>
+<%= @word_definitions.each do |definition| %>
+  <%= definition["word"] %><br>
+  <%= definition["text"] %><br>
+  <%= definition["partOfSpeech"] %><br>
+ <!--  <%= definition["relatedWords"] %> -->
 
 <% end %>
-
-<br>
-<br>
-<br>
-<br>
 
  <%= submit_tag('Create flashcard') %>
-

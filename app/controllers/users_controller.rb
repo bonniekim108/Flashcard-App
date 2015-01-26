@@ -17,6 +17,7 @@ class UsersController < ApplicationController
 
 
 		if @user.save
+			log_in @user
 			session[:user_id] = @user.id.to_s
 			redirect_to flashcards_path
 		else

@@ -13,16 +13,18 @@ class FlashcardsController < ApplicationController
 		@flashcard = Flashcard.new
 	end
 
-	def create
-		@flashcard = Flashcard.new(flashcard_params)
-		@flashcard.user = current_user
+	
+	# def create
+	# 	@flashcard = Flashcard.new(flashcard_params)
+	# 	@flashcard.user = current_user
 
-		if @flashcard.save
-			redirect_to flashcards_path
-		else
-			render :new
-		end
-	end
+	# 	if @flashcard.save
+	# 		redirect_to flashcards_path
+	# 	else
+	# 		render :new
+	# 	end
+
+
 
 	def edit
 		@flashcard = Flashcard.find(params[:id])

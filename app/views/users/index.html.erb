@@ -9,20 +9,21 @@
    	    <h2><small>Why the name, "Go Fish"?</small></h2>  
    		  <p>A wise person once said that teaching another person a skill (like fishing!) equips that individual for the rest of his life. At Go Fish, we support your educational journey - hence, the name. We believe that this is the best vocabulary app for your needs. But don't just take our word for it - try it out for yourself!</p>
       </div>
-            <div class="col-sm-5 col-md-offset-2">
+           <div class="col-sm-5 col-md-offset-2"> 
               <%= form_for @user do |f| %>
+            
               <%= f.label :username %>
               <%= f.text_field :username %>
-
+              <br>
               <%= f.label :email %>
               <%= f.email_field :email %>
-
+              <br>
               <%= f.label :password %>
               <%= f.password_field :password %>
-
+              <br>
               <%= f.label :password_confirmation, "Confirmation" %>
               <%= f.password_field :password_confirmation %>
-
+              <br>
               <%= f.submit "Create my account", class: "btn btn-primary" %>
               <% end %>
             </div>

@@ -14,7 +14,7 @@ Rails.application.routes.draw do
 
   get '/wordnik' => 'wordnik#index'
 
-  # get 'flashcards/new' => 'flashcards#new', as: :new_flashcard
+  #get 'flashcards/new' => 'flashcards#new', as: :new_flashcard
 
   # get '/wordnik' =>
 
