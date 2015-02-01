@@ -2,6 +2,7 @@ class Flashcard
   include Mongoid::Document
 
 	belongs_to :user
+  has_many :notes
 	validates :word, presence: true
 
 	field :word, type: String

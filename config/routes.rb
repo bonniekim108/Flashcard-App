@@ -19,11 +19,12 @@ Rails.application.routes.draw do
   # get '/wordnik' =>
 
   resources :users do
-    resources :flashcards
+    resources :flashcards 
+      
   end
-
+  resources :notes
   resources :sessions
-  resources :flashcards
+ 
 
 
   # The priority is based upon order of creation: first created -> highest priority.

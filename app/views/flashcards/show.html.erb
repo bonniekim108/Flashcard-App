@@ -1,9 +1,15 @@
 
-
-<h2><strong><%= @flashcard.word %></strong></h2><br>
-<p><%= @flashcard.pronunciation %></p><br>
-<p><%= @flashcard.definition %></p><br>
-<p><%= @flashcard.related_words %></p><br>
+<div>
+  <h2><strong><%= @flashcard.word %></strong></h2><br>
+  <p><%= @flashcard.pronunciation %></p><br>
+  <p><%= @flashcard.definition %></p><br>
+  <p><%= @flashcard.related_words %></p><br>
+</div>
+<div>
+  <%= f.label :body, "Notes:" %>
+  <%= f.text_area :body %>
+</div>
+<%= f.submit "Add your notes" %>
 
 <%= link_to "Back to my flashcards", flashcards_path %>
 <%= link_to "Create a new flashcard", new_flashcard_path %>
