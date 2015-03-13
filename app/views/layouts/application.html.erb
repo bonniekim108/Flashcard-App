@@ -1,25 +1,34 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <title>Wordi</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 
 <body>
-  <header class="navbar navbar-fixed-top navbar-inverse">
-    <div class="navbar-text navbar-right">
-      <% if current_user %>
-        You are signed in as <%= current_user.username %> | <%= link_to 'Log out', logout_path %>
-      <% else %>
-        <%= link_to "Log in", login_path %> | <%= link_to 'Sign up', signup_path %>
-      <% end %>
+  <nav class="navbar navbar-inverse" role="navigation">
+    <div class="links">
+      <ul class="nav navbar-nav navbar-right">
+        <% if current_user %>
+        <li> Hello, <%= current_user.username.upcase %>. Welcome back!</li>
+        <a type="button" class="btn btn-warning navbar-btn navbar-right" href="/logout">Log out</a>
+      </ul>
+      <ul class="nav navbar-nav navbar-left">
+        <a type="button" class="btn btn-info navbar-btn navbar-right" href="/flashcards">Your Flashcards</a>
+        <a type="button" class="btn btn-warning navbar-btn navbar-left" href="/messages">Your Messages</a>
+        <% else %>
+        <li><%= link_to "Sign up", '/users/new' %></li>
+        <li><%= link_to "Log in", login_path %></li>
+        <% end %>
+      </ul>
     </div>
-  </header>
+  </nav>
 
-  	<% flash.each do |message_type, message| %>
-  		<div class="alert alert-<%= message_type %>"><%= message %></div>
-  	<% end %>
-    <%= yield %>
+
+  <%= yield %>
 </body>
 </html>
+    
+
