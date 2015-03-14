@@ -15,9 +15,8 @@ class UsersController < ApplicationController
 
 		if @user.save
 			session[:user_id] = @user.id
-			redirect_to user_path(@user)			
+			redirect_to flashcards_path		
 		else
-			flash.now[:danger] = @user.errors.full_messages.to_sentence
 			render 'new'
 		end
 	end
