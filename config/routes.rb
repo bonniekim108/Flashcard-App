@@ -1,11 +1,8 @@
 Rails.application.routes.draw do
-
-
-
-  root to: 'application#index'
+ 
 
   #users
-  resources :users do 
+  resources :users
   get '/signup' => 'users#new', as: :signup  
 
   #sessions  
@@ -22,6 +19,7 @@ Rails.application.routes.draw do
 
   resources :notes
 
+  root to: 'application#index'
 end
  
 

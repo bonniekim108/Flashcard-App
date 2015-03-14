@@ -13,18 +13,20 @@
     <thead>
       <tr>
         <th>WORD</th>
-        <th>PRONUNCIATION</th> 
+        <th>EXAMPLES</th> 
         <th>DEFINITION</th>
-        <th>RELATED WORDS</th>
+        <th>SYNONYMS</th>
+        <th>ANTONYMS
       </tr>
     </thead>  
       <tbody>  
         <% @flashcards.each do |flashcard| %>
           <tr>
             <td><%= flashcard.word %></td>
-            <td><%= flashcard.pronunciation %></td>
+            <td><%= flashcard.examples %></td>
             <td><%= flashcard.definition %></td>
-            <td><%= flashcard.related_words%></td>
+            <td><%= flashcard.related_words.synonyms %></td>
+            <td><%= flashcard.related_words.antonyms %></td>
           </tr>
         <% end %> 
       </tbody> 

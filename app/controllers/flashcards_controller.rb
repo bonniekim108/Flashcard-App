@@ -2,29 +2,21 @@ class FlashcardsController < ApplicationController
 	before_action :authorize
 
 	def index
-		@flashcards = current_user.flashcards
+		@flashcards = Flashcard.all
 	end	
 
 	def show
 		@flashcard = Flashcard.find(params[:id])
 	end
 
-	def new
-		@flashcard = Flashcard.new
+	def create
+		@flashcard = current_user.flashcards.new(flashcard_params)
+		if @flashcard.save
+			redirect_to flashcards_path
+		else
+			render :new
+		end
 	end
-
-	
-	# def create
-	# 	@flashcard = Flashcard.new(flashcard_params)
-	# 	@flashcard.user = current_user
-
-	# 	if @flashcard.save
-	# 		redirect_to flashcards_path
-	# 	else
-	# 		render :new
-	# 	end
-
-
 
 	def edit
 		@flashcard = Flashcard.find(params[:id])
@@ -52,7 +44,7 @@ class FlashcardsController < ApplicationController
 	private
 
 	def flashcard_params
-		params.require(:flashcard).permit(:word, :pronunciation, :definition, :related_words, :notes)
+		params.require(:flashcard).permit(:word, :examples, :definition, :related_words)
 	end
 end
 
