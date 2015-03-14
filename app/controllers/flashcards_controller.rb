@@ -40,14 +40,14 @@ class FlashcardsController < ApplicationController
 		end
 	end
 
-	def destroy
-		@flashcard = Flashcard.find(params[:id])
+	# def destroy
+	# 	@flashcard = Flashcard.find(params[:id])
 
-		@flashcard.destroy
+	# 	@flashcard.destroy
 
-		redirect_to flashcards_path
+	# 	redirect_to flashcards_path
 
-	end
+	# end
 
 	private
 

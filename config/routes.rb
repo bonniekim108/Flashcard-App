@@ -2,30 +2,28 @@ Rails.application.routes.draw do
 
 
 
-  root 'users#index'
+  root to: 'application#index'
 
-  get '/signup' => 'users#index', as: :signup
+  #users
+  resources :users do 
+  get '/signup' => 'users#new', as: :signup  
 
+  #sessions  
+  resources :sessions
   get '/login' => 'sessions#new', as: :login
-
   post '/login' => 'sessions#create'
-
   get '/logout' => 'sessions#destroy', as: :logout
 
+  #wordnik
   get '/wordnik' => 'wordnik#index'
-
   post '/wordnik' => 'wordnik#create'
 
-  # get '/wordnik' =>
+  resources :flashcards   
 
-  resources :users do
-    resources :flashcards 
-      
-  end
   resources :notes
-  resources :sessions
- 
 
+end
+ 
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -81,4 +79,4 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-end
+
