@@ -10,4 +10,5 @@ class User
   validates :password, length: { minimum: 6}
   validates :username, presence: true, length: { maximum: 15 }
   validates :email, presence: true, uniqueness: { case_sensitive: false }
+  
 end

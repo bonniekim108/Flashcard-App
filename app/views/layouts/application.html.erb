@@ -1,32 +1,53 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <meta name="description" content="Flashcard App" />
   <title>B.Wordy</title>
+
   <link href='http://fonts.googleapis.com/css?family=Lobster+Two' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+
+  <script src="js/jquery-1.9.1.min.js"></script>
+  <script src="js/modernizr.custom.js"></script>
+  <script>
+    $(document).ready(function(){
+        $("#nav-mobile").html($("#nav-main").html());
+        $("#nav-trigger span").click(function(){
+            if ($("nav#nav-mobile ul").hasClass("expanded")) {
+                $("nav#nav-mobile ul.expanded").removeClass("expanded").slideUp(250);
+                $(this).removeClass("open");
+            } else {
+                $("nav#nav-mobile ul").addClass("expanded").slideDown(250);
+                $(this).addClass("open");
+            }
+        });
+    });
+</script> 
 </head>
 
 <body>
-  <div class="header">
-    <div class="menu">
-      <nav class="nav">
-        <% if current_user %>
-        <li> Hello, <%= current_user.username.upcase %>. Welcome back!</li>
-        <a type="button" class="btn btn-warning navbar-btn navbar-right" href="/logout">Log out</a>
-      </nav>
-      <ul class="nav navbar-nav navbar-left">
-        <a type="button" class="btn btn-info navbar-btn navbar-right" href="/flashcards">Flashcards</a>
-        <% else %>
-        <a type="button" class="btn btn-blue navbar-btn navbar-right" href="#" data-toggle="modal" data-target="#userModal">sign Up</a>
-        <a type="button" class="btn btn-black navbar-btn navbar-right" href="#" data-toggle="modal" data-target="#userModal">Log In</a>
-        <% end %>
-      </ul>
-    </div>
-  </div>
+  <nav id="nav-main">
+    <ul>
+      <% if current_user %>
+      <li><%= link_to "your flashcards", flashcards_path %></li>
+      <li>Hello, <%= current_user.username.upcase %>. Welcome back!</li>
+      <li><%= link_to "log out", logout_path %></li>
+      <% else %>
+      <li><%= link_to "sign up", '/users/new' %></li>
+      <li><%= link_to "log in", login_path %></li>
+      <% end %>
+    </ul>
+  </nav>
 
+  <div id="nav-trigger">
+    <span>Menu</span>
+  </div>
+  <nav id="nav-mobile"></nav> <!-- for mobile navigation and triggered by navigation trigger -->
 
   <%= yield %>
 </body>
