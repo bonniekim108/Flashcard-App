@@ -1,29 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Wordi</title>
+  <title>B.Wordy</title>
+  <link href='http://fonts.googleapis.com/css?family=Lobster+Two' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 
 <body>
-  <nav class="navbar navbar-inverse" role="navigation">
-    <div class="links">
-      <ul class="nav navbar-nav navbar-right">
+  <div class="header">
+    <div class="menu">
+      <nav class="nav">
         <% if current_user %>
         <li> Hello, <%= current_user.username.upcase %>. Welcome back!</li>
         <a type="button" class="btn btn-warning navbar-btn navbar-right" href="/logout">Log out</a>
-      </ul>
+      </nav>
       <ul class="nav navbar-nav navbar-left">
         <a type="button" class="btn btn-info navbar-btn navbar-right" href="/flashcards">Flashcards</a>
         <% else %>
-        <li><%= link_to "Sign up", '/users/new' %></li>
-        <li><%= link_to "Log in", login_path %></li>
+        <a type="button" class="btn btn-blue navbar-btn navbar-right" href="#" data-toggle="modal" data-target="#userModal">sign Up</a>
+        <a type="button" class="btn btn-black navbar-btn navbar-right" href="#" data-toggle="modal" data-target="#userModal">Log In</a>
         <% end %>
       </ul>
     </div>
-  </nav>
+  </div>
 
 
   <%= yield %>

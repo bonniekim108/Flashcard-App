@@ -3,11 +3,14 @@
 @import "bootstrap";
 
 
+/*
+ *= require font-awesome
+ */
 
 body {
 
   padding-top: 60px;
-  background-color: #B2BFA8;
+  background-color: #FFFFFF;
  
 }
 
@@ -19,19 +22,21 @@ h1 {
 }
 
 .navbar {
-  font-size: 40px;
+  font-size: 15px;
   font-family: 'Times New Roman';
   padding: 15px, 0px, 15px, 25px;
+  background-image: none;
 
 }
 
 .navbar-fixed-top {
-  height: 90px;
+  height: 100px;
+  background-image: none;
 }
 
 .links {
   font-family: 'Times New Roman';
-  font-size: 25px;
+  font-size: 15px;
   padding: 15px, 0px, 15px, 25px;
 }
 
