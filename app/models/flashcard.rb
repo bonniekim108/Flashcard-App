@@ -6,6 +6,5 @@ class Flashcard
 	field :word, type: String
 	field :examples, type: String
 	field :definition, type: String
-	field :related_words, type: String
 
 end

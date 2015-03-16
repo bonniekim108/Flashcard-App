@@ -5,6 +5,7 @@ gem 'carrierwave'
 gem 'carrierwave-mongoid', :require => 'carrierwave/mongoid'
 gem 'fog'
 gem 'mini_magick'
+gem 'figaro'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
 # Use SCSS for stylesheets

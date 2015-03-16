@@ -3,7 +3,7 @@
 <br>
 
 <div class="wordnik-container">
-  <div class='row'>
+  <div class="row">
     <div class="col-md-6 col-md-offset-5">
       <h2>Word Results</h2>
       <br>
@@ -13,17 +13,12 @@
       EXAMPLES:       <%= @word_examples[0]["text"] %> 
                       <br>
       DEFINITIONS:    <%= @word_definitions[0]["text"] %> 
-                      <br>
-      SYNONYMS:       <% @word_related_words[0]["words"].each do |synonym| %><%= synonym %>
-                      <br>
-      ANTONYMS:       <% @word_related_words[0]["words"].each do |antonym| %><%= antonym %>
-                       
       <% end %>
       <br>
       <br>
 
       <%= button_to "create flashcard", wordnik_path(word: params[:word]) %>
+
     </div>
   </div>
 </div> 
-<% end %>

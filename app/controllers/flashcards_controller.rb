@@ -44,7 +44,7 @@ class FlashcardsController < ApplicationController
 	private
 
 	def flashcard_params
-		params.require(:flashcard).permit(:word, :examples, :definition, :related_words)
+		params.require(:flashcard).permit(:word, :examples, :definition)
 	end
 end
 

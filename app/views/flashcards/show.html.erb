@@ -2,10 +2,8 @@
 <div class="individual-card">
   <% if current_user %>  
   <p><strong><%= @flashcard.word %></strong></p>
-  <br>
   <p><%= @flashcard.examples %></p><br>
   <p><%= @flashcard.definition %></p><br>
-  <p><%= @flashcard.related_words %></p><br>
 
   <% else %>
   <%= link_to "Back to my flashcards", flashcards_path %>
