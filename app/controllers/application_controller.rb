@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
 
   def authorize
     flash[:warning] = "You must be logged in to access that content"
-  	redirect_to login_path unless current_user
+  	redirect_to '/login' unless current_user
   end
 end
 
