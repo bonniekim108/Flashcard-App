@@ -1,5 +1,4 @@
 class FlashcardsController < ApplicationController
-	before_action :authorize
 
 	def index
 		@flashcards = Flashcard.all
@@ -11,7 +10,8 @@ class FlashcardsController < ApplicationController
 
 	def create
 		@flashcard = current_user.flashcards.new(flashcard_params)
-		if @flashcard.save
+		if @flashcard.save 
+			#if the flashcard is saved successfully, add to list of all user's flashcards and redirect there
 			redirect_to flashcards_path
 		else
 			render :new
