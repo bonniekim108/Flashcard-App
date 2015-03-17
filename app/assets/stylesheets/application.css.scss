@@ -14,18 +14,18 @@
   font-family: 'Merriweather Sans', sans-serif;
 }
 
-body {
-  background: url("storytelling.jpeg") no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-}
+// body {
+//   background: url("storytelling.jpeg") no-repeat center center fixed;
+//     -webkit-background-size: cover;
+//     -moz-background-size: cover;
+//     -o-background-size: cover;
+//     background-size: cover;
+// }
 
 .thicker {
 
   .quote {
-    font-size: 83px;
+    font-size: 87px;
     font-weight: 900;
     line-height: 96%;
     color: #EC583A;
@@ -42,27 +42,26 @@ body {
 }
 
   .story-container {
+
     p {
-      font-size: 75px;
+      font-size: 40px;
       text-align: center;
+      color: #EC583A;
+      .bold {
+        font-weight: bold;
+        color: black;
+      }
     }
+
     img {
-      width: 90%;
+      width: 83%;
       height: auto;
+      margin: auto;
+      background-image: center;
     }
+
   }
 
-body {
-
-  padding-top: 60px;
-  // background-color: #FFFFFF;
-  background: url("storytelling.jpeg") no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
- 
-}
 
 h1 {
   font-size: 60px; 
@@ -72,20 +71,14 @@ h1 {
 }
 
 
-.links {
-  font-family: 'Times New Roman';
-  font-size: 15px;
-  padding: 15px, 0px, 15px, 25px;
-}
+
 
 $navbar-height: 50px;
 $big-logo-padding: 15px; // adjust these 2 values
 $small-logo-padding: 2px; // of bottom padding to look nice
 
+// single scroll landing page
 
-/* *********************************
-   Some Style Overrides on Bootstrap
-  ********************************** */
 .navbar-inverse {
   background: #FFFFFF;
   border-bottom: none;
@@ -118,15 +111,14 @@ color: white;
 
 }
 .navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus {
-color: #22F;
+color: gray;
 
 }
 ul.nav {
 }
 
-/* *********************************
-           Toolbar Logo
-  ********************************** */
+// small navbar
+
 .small-logo-container {
     padding-top: $navbar-height;
     height: $navbar-height;
@@ -143,9 +135,8 @@ ul.nav {
   padding-bottom: $small-logo-padding;
 }
 
-/* *********************************
-           Big Logo
-  ********************************** */
+// big navbar
+
 .big-logo-row {
   background: #FA8B60;
   
@@ -167,5 +158,64 @@ ul.nav {
     @media (min-width: 630px) { font-size: 7.5em;  }
     @media (min-width: 768px) { font-size: 9em; padding-bottom: $big-logo-padding * 2; }
     @media (min-width: 1200px) { font-size: 12em; }
+  }
+}
+
+// flashcard pages
+
+.search-container {
+  background-color: #C7D0D5;
+  width: 30%;
+  height: 50%;
+  overflow: auto;
+  margin: auto;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+  padding: 10px;
+  border-radius: 25px;
+  // text-position: center;
+  .create_flashcard {
+    text-align: center;
+    color: #FF7148;
+    font-size: 25px bold;
+
+  }
+}
+
+.list-container {
+  background-color: #C7D0D5;
+  width: 80%;
+  height: 85%;
+  overflow: auto;
+  margin: auto;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+  padding: 10px;
+  border-radius: 30px;
+  text-position: center;
+  h3 {
+    text-align: center;
+    color: #FF7148;
+    font-size: 25px bold;
+  
+  }
+}
+
+.signup-container {
+  background-color: #FF7148;
+  width: 50%;
+  height: 55%;
+  overflow: auto;
+  margin: auto;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+  padding: 10px;
+  border-radius: 30px;
+  text-position: center;
+  h3 {
+    text-align: center;
+    color: #FF7148;
+    font-size: 25px bold;
+  
   }
 }
