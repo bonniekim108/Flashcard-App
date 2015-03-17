@@ -1,4 +1,5 @@
 class WordnikController < ApplicationController
+# before_filter :authorize
 
   def index
     # @word_words          = Wordnik.get_definitions(params[:word])

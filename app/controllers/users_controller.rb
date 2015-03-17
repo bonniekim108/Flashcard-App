@@ -23,6 +23,7 @@ class UsersController < ApplicationController
 
 	def show
 		@user = User.find(params[:id])
+		@flashcards = @user.flashcards(params[:id])
 	end
 
 	def edit
