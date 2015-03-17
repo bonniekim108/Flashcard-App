@@ -5,20 +5,18 @@
 <div class="wordnik-container">
   <div class="row">
     <div class="col-md-6 col-md-offset-5">
-      <h2>Word Results</h2>
+
+      <%= @word_definitions[0]["word"] %>
+      <br> 
+      EXAMPLES:     <%= @word_examples[0]["text"] %> 
       <br>
-      <br>
-      WORD:           <%= @word_definitions[0]["word"] %>
-                      <br> 
-      EXAMPLES:       <%= @word_examples[0]["text"] %> 
-                      <br>
-      DEFINITIONS:    <%= @word_definitions[0]["text"] %> 
+      DEFINITIONS:  <%= @word_definitions[0]["text"] %> 
       <% end %>
       <br>
       <br>
 
       <%= button_to "create flashcard", wordnik_path(word: params[:word]) %>
-
     </div>
   </div>
 </div> 
+
