@@ -1,36 +1,39 @@
 
 
-<div class="row">
-  <div class="col-md-8 col-md-offset-2">
-    <table class="table table-striped">
-    <h3>Flashcards</h3>
-    <br>
-    <br>
-    <thead>
-      <tr>
-        <th>WORD</th>
-        <th>EXAMPLES</th> 
-        <th>DEFINITION</th>
-      </tr>
-    </thead>  
-      <tbody>  
-        <% @flashcards.each do |flashcard| %>
-          <tr>
-            <td><%= flashcard.word %></td>
-            <td><%= flashcard.examples %></td>
-            <td><%= flashcard.definition %></td>
-          </tr>
-        <% end %> 
-      </tbody> 
-    </table>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <%= link_to 'New flashcard', new_flashcard_path %>
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2 list-container">
+      <table class="table table-striped">
+      <h3>All User Flashcards</h3>
+      <br>
+      <thead>
+        <tr>
+          <th>WORDS</th>
+          <th>EXAMPLES</th> 
+          <th>DEFINITIONS</th>
+        </tr>
+      </thead>  
+        <tbody>  
+          <% @flashcards.each do |flashcard| %>
+            <tr>
+              <td width="20%"><%= flashcard.word %></td>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <td width="30%"><%= flashcard.examples %></td>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <td width="50%"><%= flashcard.definition %></td>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </tr>
+          <% end %> 
+        </tbody> 
+      </table>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <%= link_to 'New flashcard', new_flashcard_path %>
+    </div>
   </div>
-</div>
+
 
  
 
