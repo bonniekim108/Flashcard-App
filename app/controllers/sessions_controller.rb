@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
 		user = User.find_by(username: params[:user][:username]) 
 		if user && user.authenticate(params[:user][:password])
 			session[:user_id] = user.id.to_s 
-			redirect_to flashcards_path
+			redirect_to show_users_path
 		else
 			flash.now[:alert] = "Username or password incorrect."
 			render :new
