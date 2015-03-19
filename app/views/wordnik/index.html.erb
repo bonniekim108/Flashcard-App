@@ -4,18 +4,23 @@
 
 <div class="wordnik-container">
   <div class="row">
-    <div class="col-md-6 col-md-offset-5">
+    <div class="col-md-6 col-md-offset-6">
 
       <%= @word_definitions[0]["word"] %>
       <br> 
-      EXAMPLES:     <%= @word_examples[0]["text"] %> 
+      EXAMPLES:     <%= @word_examples["examples"][0]["text"] %> 
       <br>
       DEFINITIONS:  <%= @word_definitions[0]["text"] %> 
+      <br>
+      <br>
+      <%= form_for Flashcard.new() do |f| %>
+      <div style ='display:none'>
+        <%= f.text_field :word, value: "#{@word_definitions[0]["word"]}" %>
+        <%= f.text_field :examples, value: "#{@word_examples["examples"][0]["text"]}" %>
+        <%= f.text_field :definition, value: "#{@word_definitions[0]["text"]}" %>
+      </div>
+        <%= f.submit %>
       <% end %>
-      <br>
-      <br>
-
-      <%= button_to "create flashcard", wordnik_path(word: params[:word]) %>
     </div>
   </div>
 </div> 

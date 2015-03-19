@@ -3,12 +3,6 @@
   <div class="row">
     <div class="col-md-8 col-md-offset-2 list-container">
       <table class="table table-striped">
-        <h3> All your flashcards </h3>
-          <% if current_user.flashcards %>
-            <% current_user.flashcards.each do |h| %>
-              <%= h.word %>
-            <% end %>
-          <% end %>
       <h3>All User Flashcards</h3>
       <br>
       <thead>
