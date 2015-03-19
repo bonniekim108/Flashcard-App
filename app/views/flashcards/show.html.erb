@@ -1,9 +1,9 @@
 
 <div class="individual-card container">
   <% if current_user %>  
-  <p><strong><%= @flashcard.word %></strong></p>
+  <p><%= @flashcard.word %></p>
   <p><%= @flashcard.examples %></p><br>
-  <p><%= @flashcard.definition %></p><br>
+  <p><%= @flashcard.definitions %></p><br>
 
   <% else %>
   <%= link_to "Back to my flashcards", flashcards_path %>

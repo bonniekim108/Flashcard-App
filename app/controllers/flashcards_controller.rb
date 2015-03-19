@@ -7,14 +7,16 @@ class FlashcardsController < ApplicationController
 	def show
 		@flashcard = Flashcard.find(params[:id])
 	end
-
+	def new 
+	end
 	def create
 		@flashcard = current_user.flashcards.new(flashcard_params)
 		if @flashcard.save 
+
 			#if the flashcard is saved successfully, add to list of all user's flashcards and redirect there
 			redirect_to flashcards_path
 		else
-			render :new
+			raise 'error'
 		end
 	end
 
