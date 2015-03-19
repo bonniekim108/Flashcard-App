@@ -15,10 +15,9 @@ Rails.application.routes.draw do
   get '/wordnik' => 'wordnik#index'
   post '/wordnik' => 'wordnik#create'
 
+  #flashcards
   resources :flashcards  
   post '/flash' => 'flashcards#create' , as: :flash 
-
-  resources :notes
 
   root to: 'application#index'
 end
