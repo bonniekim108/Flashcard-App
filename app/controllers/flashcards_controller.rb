@@ -7,8 +7,10 @@ class FlashcardsController < ApplicationController
 	def show
 		@flashcard = Flashcard.find(params[:id])
 	end
+
 	def new 
 	end
+	
 	def create
 		@flashcard = current_user.flashcards.new(flashcard_params)
 		if @flashcard.save 
@@ -33,15 +35,6 @@ class FlashcardsController < ApplicationController
 			render :edit
 		end
 	end
-
-	# def destroy
-	# 	@flashcard = Flashcard.find(params[:id])
-
-	# 	@flashcard.destroy
-
-	# 	redirect_to flashcards_path
-
-	# end
 
 	private
 
