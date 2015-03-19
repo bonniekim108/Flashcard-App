@@ -2,22 +2,23 @@ Rails.application.routes.draw do
  
 
   #users
+  get '/signup' => 'users#new', as: :signup 
+  # post '/signup' => 'flashcards#index'
   resources :users
-  get '/signup' => 'users#new', as: :signup  
 
   #sessions  
-  resources :sessions
   get '/login' => 'sessions#new', as: :login
-  post '/login' => 'sessions#create'
+  post '/login' => 'users#show'
   get '/logout' => 'sessions#destroy', as: :logout
+  resources :sessions
 
   #wordnik
   get '/wordnik' => 'wordnik#index'
   post '/wordnik' => 'wordnik#create'
 
   #flashcards
+  post '/flashcards' => 'flashcards#create' , as: :flashcard 
   resources :flashcards  
-  post '/flash' => 'flashcards#create' , as: :flash 
 
   root to: 'application#index'
 end
