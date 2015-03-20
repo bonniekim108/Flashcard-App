@@ -14,13 +14,6 @@
   font-family: 'Merriweather Sans', sans-serif;
 }
 
-// body {
-//   background: url("storytelling.jpeg") no-repeat center center fixed;
-//     -webkit-background-size: cover;
-//     -moz-background-size: cover;
-//     -o-background-size: cover;
-//     background-size: cover;
-// }
 
 .thicker {
 
@@ -70,7 +63,28 @@ h1 {
   left: 55px;
 }
 
-
+.flashcard-columns {
+  background-color: #77C4BC;
+  display: inline-block;
+  width: 340px;
+  height: 370px;
+  overflow: auto;
+  margin: auto;
+  position: absolute;
+  // top: 0; left: 0; bottom:  0; right: 0;
+  padding: 10px;
+  border-radius: 25px;
+  text-position: center;
+  p {
+    font-size: 13px bold;
+    color: #5A5A5A;
+    position: relative; 
+    text-align: left;
+  }
+  p.center {
+    text-align: center;
+  }
+}
 
 
 $navbar-height: 50px;

@@ -3,12 +3,10 @@ Rails.application.routes.draw do
 
   #users
   get '/signup' => 'users#new', as: :signup 
-  # post '/signup' => 'flashcards#index'
   resources :users
 
   #sessions  
   get '/login' => 'sessions#new', as: :login
-  post '/login' => 'users#show'
   get '/logout' => 'sessions#destroy', as: :logout
   resources :sessions
 
