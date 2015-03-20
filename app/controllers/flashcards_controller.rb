@@ -10,15 +10,15 @@ class FlashcardsController < ApplicationController
 
 	def new 
 	end
-	
+
 	def create
 		@flashcard = current_user.flashcards.new(flashcard_params)
 		if @flashcard.save 
 
 			#if the flashcard is saved successfully, add to list of all user's flashcards and redirect there
-			redirect_to flashcards_path
+			redirect_to user_path(current_user.id)
 		else
-			raise 'error'
+			render :new
 		end
 	end
 
