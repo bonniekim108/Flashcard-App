@@ -1,25 +1,33 @@
 <br>
 <br>
 <br>
-
+<br>
 <div class="wordnik-container">
   <div class="row">
     <div class="col-md-6 col-md-offset-6">
-
-      <%= @word_definitions[0]["word"] %>
-      <br> 
-      EXAMPLES:     <%= @word_examples["examples"][0]["text"] %> 
-      <br>
-      DEFINITIONS:  <%= @word_definitions[0]["text"] %> 
-      <br>
-      <br>
-      <%= form_for Flashcard.new() do |f| %>
-      <div style ='display:none'>
-        <%= f.text_field :word, value: "#{@word_definitions[0]["word"]}" %>
-        <%= f.text_field :examples, value: "#{@word_examples["examples"][0]["text"]}" %>
-        <%= f.text_field :definition, value: "#{@word_definitions[0]["text"]}" %>
-      </div>
-        <%= f.submit %>
+      <% if @word_definitions.empty? %>
+        <p>Sorry, we could not find that word. Check spelling, and try again.</p> 
+        <%= link_to 'New flashcard', new_flashcard_path %>
+      <% else %>
+        <h3><strong><%= @word_definitions[0]["word"] %></strong></h3>
+        <br>
+        <br> 
+        EXAMPLE:<br>     
+        <%= @word_examples["examples"][0]["text"] %> 
+        <br>
+        <br>
+        DEFINITION:<br>
+        <%= @word_definitions[0]["text"] %> 
+        <br>
+        <br>
+        <%= form_for Flashcard.new() do |f| %>
+        <div style ='display:none'>
+          <%= f.text_field :word, value: "#{@word_definitions[0]["word"]}" %>
+          <%= f.text_field :examples, value: "#{@word_examples["examples"][0]["text"]}" %>
+          <%= f.text_field :definition, value: "#{@word_definitions[0]["text"]}" %>
+        </div>
+          <%= f.submit %>
+        <% end %>
       <% end %>
     </div>
   </div>
