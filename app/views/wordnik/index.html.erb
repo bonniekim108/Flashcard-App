@@ -4,21 +4,20 @@
 <br>
 <div class="wordnik-container">
   <div class="row">
-    <div class="col-md-6 col-md-offset-6">
+    <div class="col-md-6 col-md-offset-6 text">
       <% if @word_definitions.empty? %>
         <p>Sorry, we could not find that word. Check spelling, and try again.</p> 
         <%= link_to 'New flashcard', new_flashcard_path %>
       <% else %>
         <h3><strong><%= @word_definitions[0]["word"] %></strong></h3>
+        <hr/>
         <br>
         <br> 
-        EXAMPLE:<br>     
-        <%= @word_examples["examples"][0]["text"] %> 
+        <p>EXAMPLE:</p>    
+        <p><%= @word_examples["examples"][0]["text"] %></p> 
         <br>
-        <br>
-        DEFINITION:<br>
-        <%= @word_definitions[0]["text"] %> 
-        <br>
+        <p>DEFINITION:</p>
+        <p><%= @word_definitions[0]["text"] %></p> 
         <br>
         <%= form_for Flashcard.new() do |f| %>
         <div style ='display:none'>

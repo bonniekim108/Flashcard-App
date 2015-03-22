@@ -15,9 +15,9 @@ class UsersController < ApplicationController
 		if @user.save
 			session[:user_id] = @user.id.to_s 
 			redirect_to flashcards_path
-
 		else
-			render 'new'
+			flash.now[:danger] = "Invalid form."
+			redirect_to new_user_path
 		end
 	end
 

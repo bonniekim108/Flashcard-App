@@ -4,9 +4,9 @@ class FlashcardsController < ApplicationController
 		@flashcards = Flashcard.all
 	end	
 
-	def show
-		@flashcard = Flashcard.find(params[:id])
-	end
+	# def show
+	# 	@flashcard = Flashcard.find(params[:id])
+	# end
 
 	def new 
 	end
@@ -15,7 +15,7 @@ class FlashcardsController < ApplicationController
 		@flashcard = current_user.flashcards.new(flashcard_params)
 		if @flashcard.save 
 
-			#if the flashcard is saved successfully, add to list of all user's flashcards and redirect there
+			#if the flashcard is saved successfully, add to list of all user's flashcards and redirect to user profile
 			redirect_to user_path(current_user.id)
 		else
 			render :new
