@@ -1,27 +1,4 @@
-<br>
-<br>
-<br>
-<br>
-<div class="signup-container">
-  <div class="col-md-4 col-md-offset-4">
-    <%= form_for User.new do |f| %>
-      
-      <%= f.text_field :username, placeholder: "username", class: 'form-control' %>
-      <br>
-      
-      <%= f.text_field :email, placeholder: "email", class: 'form-control' %>
-      <br>
-     
-      <%= f.password_field :password, placeholder: "password", class: 'form-control' %>
-      <br>
-      
-      <%= f.password_field :password_confirmation, placeholder: "confirm password", class: 'form-control' %>
-      <br>
-      
-      <%=f.submit "SIGN UP", class: "btn btn-primary" %>
-    <% end %>
-  </div>
-</div>
+<%= render 'users/form' %>
 
    
 

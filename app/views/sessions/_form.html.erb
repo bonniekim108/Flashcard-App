@@ -1,0 +1,11 @@
+<div class="user-login">
+  <%= form_for :user, url: sessions_path do |f| %>
+    <%= f.text_field :username, placeholder: "username", class: 'form-control' %>
+    <br>
+    <br>
+    <%= f.password_field :password, placeholder: "password", class: 'form-control' %>
+    <br>
+    <br>
+    <%= f.submit "LOG IN", class: "btn btn-primary" %>
+  <% end %>
+</div>

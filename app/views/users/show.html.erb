@@ -1,10 +1,30 @@
-<div class="col-md-6 user-flashcards">
-  <h3>My Flashcards</h3>
-    <% if current_user.flashcards %>
-      <% current_user.flashcards.each do |h| %>
-        <%= h.word %>
-      <% end %>
-    <% end %>
+<!-- User Profile Page with all user's flashcards -->
+
+<div class="show-profile">
+  <p class="hello"><span>hello,</span> <%= current_user.username.upcase %>!</p>
+  <br>
+  <br>
+<!--   <div id="show-section">MY FLASHCARDS (pretty impressive, isn't it?)</div> -->
+  <div class="link"><%= link_to 'Create a new flashcard', new_flashcard_path %></div>
+  <hr class="divider-horizontal"/>
 </div>
 
+<div class="show-flashcards">
+  <h3>My Flashcards</h3>
+  <div class="flashcard-columns">
+    <% if current_user.flashcards %>
+      <% current_user.flashcards.each do |u| %>
+        <div class="thirds">
+          <p class="center"><%= u.word %></p>
+          EXAMPLE:
+          <p><%= u.examples %></p>
+          <br>
+          DEFINITION:
+          <p><%= u.definition %></p>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+ 
 
