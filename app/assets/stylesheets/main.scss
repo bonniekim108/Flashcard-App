@@ -258,7 +258,7 @@ h1 {
 
 .show-profile {
   .hello {
-    text-align: center;
+    margin-left: 23px;
     font-size: 45px;
     color: black;
     font-weight: bold;
@@ -269,18 +269,28 @@ h1 {
   // }
 
   .link {
-    margin-left: 20px;
+    margin-left: 23px;
     font-size: 15px;
   }
 }
 .show-flashcards{
   h3 {
     text-align: center;
-    font-size: 30px;
+    font-size: 33px;
   }
   .flashcard-columns {
-    .thirds {
-      width: 27%;
+    .flip .card.flipped {
+      -webkit-transform: rotatex(-180deg);
+    }
+    .flip .card {
+      width: 100%;
+      height: 100%;
+      -webkit-transform-style: preserve-3d;
+      -webkit-transition: 0.5s;
+    }
+    .flip {
+      -webkit-perspective: 800;
+      width: 28%;
       float: left;
       margin: 1.5%;
       height: 380px;
@@ -289,17 +299,37 @@ h1 {
       position: relative;
       left: 60px;
       border-radius: 30px;
-      // text-position: center;
-      center {
-        text-align: center;
-        color: #5A5A5A;
-        font-size: 50px bold;
+      .flip .card .face {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        -webkit-backface-visibility: hidden;
+        z-index: 2;    
+        p {
+          text-align: center;
+          color: #5A5A5A;
+          font-size: 25px;
+          font-weight: bold;
+          line-height: 200px;
+        }
+      .flip .card .front {
+        position: absolute;
+        z-index: 1;
+        background: black;
+        color: white;
+        cursor: pointer;
       }
-      p {
-        font-size: 13px bold;
-        color: #5A5A5A;
-        position: relative; 
-        text-align: left;
+      }
+      .flip .card .back {
+        -webkit-transform: rotatex(-180deg);
+        cursor: pointer;    
+
+        p {
+          font-size: 25px bold;
+          color: #5A5A5A;
+          position: relative; 
+          text-align: left;
+        }
       }
     }
   }
