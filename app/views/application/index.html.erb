@@ -1,94 +1,97 @@
+<div class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
 
-    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-      <div class="navbar-container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>        
-          </button>
-          <div class="small-logo-container">
-            <a class="small-logo" href="#">&nbsp;&nbsp;&nbsp;&nbsp;be.wordy</a>
+    <ul class="nav navbar-nav navbar-left">
+      <a class="navbar-brand" href="/">simply vocab</a>
+      <% if current_user %>
+        <li><p class="welcome">Welcome, <strong><%= current_user.username %></strong></p></li>
+        <li class="link"><%= link_to "My Flashcards", user_path(current_user.id) %></li>
+      <% end %>
+    </ul>
+
+    <ul class="nav navbar-nav navbar-right">
+      <% if current_user %>
+        <div class="input-group createlogout-btn navbar-right">
+          <div class="">
+            <div>
+              <a type="button" class="btn btn-primary navbar-btn navbar-right-create" href="">Create Flashcards</a>
+              <a type="button" class="btn btn-primary navbar-btn navbar-right" href="/logout">Log Out</a>
+            </div>
           </div>
         </div>
-        <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav navbar-right">
-            <% if current_user %>
-              <li><%= link_to "flashcards", '/flashcards' %></li>
-              <li><%= link_to "log out", '/logout' %></li>
-            <% else %>
-              <li class="about"><a href="#">about</a></li>
-              <li><%= link_to "sign up", '/signup' %></li>
-              <li><%= link_to "log in", '/login' %></li>
-            <% end %>
-          </ul>
-        </div><!--/.nav-collapse -->
-      </div>
-    </div>
-
-    <div class="container-fluid big-logo-row">
-      <div class="container">
-        <div class="row">
-          <div class="col-xs-12 big-logo-container">
-            <h1 class="big-logo">be.wordy</h1>
-          </div><!--/.col-xs-12 -->
-        </div><!--/.row -->
-      </div><!--/.container -->
-    </div><!--/.container-fluid -->
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-
-    <div class="quote-container">
-      <div class="row">
-        <div class="col-xs-8 col-xs-offset-2">
-          <div class="thicker">
-            <p class="quote">"A picture can tell a thousand <span class="black">WORDS</span> but a few words can <span class="black">CHANGE ITS STORY..."</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<!-- &nbsp;&nbsp;&nbsp;&nbsp; -->
-            </p>
-            <p class="quote-author">
-              - Sebastyne Young
-            </p>
-          </div> 
-   
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          
-          <div class="story-container">
-            <p>
-              What's your story?&nbsp; You just need to <span class="bold">be.wordy.</span>
-            </p>
-            <img src="http://blog.klout.com/wp-content/uploads/2014/04/Fotolia_43695416_Subscription_Monthly_M.jpg" alt="Stories">
+      <% else %>
+        <div class="input-group signuplogin-btn navbar-right">
+          <div class="">
+            <div>
+              <a type="button" class="btn btn-primary signup-navbar-btn" href="#" data-toggle="modal" data-target="#basicModal">Sign Up</a>&nbsp;&nbsp;
+              <%= render 'users/user_modal' %>
+              <a type="button" class="btn btn-primary login-navbar-btn" href="#" data-toggle="modal" data-target="#login-basicModal">Log In</a>
+              <%= render 'sessions/login_modal' %>
+            </div>
           </div>
-        </div><!--/.col-xs-12 -->
-      </div><!--/.row -->
-    </div><!--/.container -->
-<!--   </div> -->
-
+        </div>
+        <div class="error">
+        <div class="col-md-4"></div><div class="col-md-4"></div>
+        <% flash.each do |key, value| %>
+        <div class="col-md-4">
+          <div class='alert alert-dismissible alert-<%= key %>' role='danger'> 
+          <%= value %>
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span>
+          </button>
+          </div>
+        </div>
+        <% end %>
+        </div>
+      <% end %>
+    </ul>
+  </div>
+</div>
+<br>
+<div class="col-md-12 landing-page-container">
+  <div class="title">
+    <h1>simply&nbsp;vocab</h1>
+  </div>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="explanation row">
+  <h3>Why should you choose simply vocab? Great question.</h3><br>
+    <div class="col-sm-4 container">
+      <p class="circle"><span>It's handy; it can be accessed on your phone, your tablet, or your computer</span></p>
+    </div>  
+    <div class="col-sm-4 container">
+      <p class="circle"><span>It teaches REAL English, not a watered-down, simplified version</span></p>
+    </div>
+    <div class="col-sm-4 container">
+      <p class="circle"><span>It's a time - saver;  we make the flashcards so you don't have to</span></p> 
+    </div>
+<br>
+<br>
+<br>
+<br>
+<br> 
+<br>
+<br>   
+</div>
  
+
+
+
+
+
+
+
+
