@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
 			redirect_to user_path(current_user.id)
 		else
 			flash.now[:danger] = "Username or password incorrect."
-			render :new
+			redirect_to root_path
 		end
 	end
 

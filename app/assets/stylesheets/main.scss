@@ -66,7 +66,7 @@ body {
 
     .navbar-brand {
       margin-top: 5px;
-      font-size: 25px;
+      font-size: 28px;
       color: white;
     }
   }
@@ -254,7 +254,8 @@ h1 {
   left: 55px;
 }
 
-// user profile page
+
+// user profile page - users/show
 
 .show-profile {
   .hello {
@@ -264,41 +265,39 @@ h1 {
     font-weight: bold;
   }
 
-  // #show-section {
-  //   margin-left: 20px;
-  // }
-
   .link {
     margin-left: 23px;
     font-size: 15px;
   }
 }
-.show-flashcards{
-  h3 {
-    text-align: center;
-    font-size: 33px;
-  }
-  .flashcard-columns {
-    .flip .card.flipped {
-      -webkit-transform: rotatex(-180deg);
+
+  .show-flashcards{
+    h3 {
+      text-align: center;
+      font-size: 33px;
     }
-    .flip .card {
-      width: 100%;
-      height: 100%;
-      -webkit-transform-style: preserve-3d;
-      -webkit-transition: 0.5s;
-    }
+
     .flip {
       -webkit-perspective: 800;
-      width: 28%;
+      width: 27%;
       float: left;
       margin: 1.5%;
-      height: 380px;
+      height: 350px;
       background: $green;
-      padding: 12px;
+      // padding: 12px;
       position: relative;
       left: 60px;
-      border-radius: 30px;
+      // border-radius: 30px;
+    }
+      .flip .card.flipped {
+        -webkit-transform: rotatex(-180deg);
+    }
+      .flip .card {
+        width: 100%;
+        height: 100%;
+        -webkit-transform-style: preserve-3d;
+        -webkit-transition: 0.5s;
+    }
       .flip .card .face {
         width: 100%;
         height: 100%;
@@ -308,32 +307,34 @@ h1 {
         p {
           text-align: center;
           color: #5A5A5A;
-          font-size: 25px;
+          // font-size: 15px;
           font-weight: bold;
-          line-height: 200px;
+          // line-height: 200px;
         }
+      }
       .flip .card .front {
         position: absolute;
         z-index: 1;
-        background: black;
+        background: $green;
         color: white;
         cursor: pointer;
-      }
+        p {
+          font-size: 30px;
+          margin-top: 50px;
+        }
       }
       .flip .card .back {
         -webkit-transform: rotatex(-180deg);
-        cursor: pointer;    
+        background: $lime;
+        cursor: pointer;
+        padding: 15px;    
 
-        p {
-          font-size: 25px bold;
-          color: #5A5A5A;
-          position: relative; 
-          text-align: left;
+        h4 {
+          font-size: 18px;
+          color: black;
         }
       }
-    }
   }
-}
 
 
 // flashcard pages

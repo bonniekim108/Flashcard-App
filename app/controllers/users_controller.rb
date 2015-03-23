@@ -17,7 +17,7 @@ class UsersController < ApplicationController
 			redirect_to flashcards_path
 		else
 			flash.now[:danger] = "Invalid form."
-			redirect_to new_user_path
+			redirect_to root_path
 		end
 	end
 

@@ -1,0 +1,50 @@
+
+
+<div class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+
+    <ul class="nav navbar-nav navbar-left">
+      <a class="navbar-brand" href="/">simply vocab</a>
+      <% if current_user %>
+        <li><p class="welcome">Welcome, <strong><%= current_user.username %></strong></p></li>
+        <li class="link"><%= link_to "My Flashcards", user_path(current_user.id) %></li>
+      <% end %>
+    </ul>
+
+    <ul class="nav navbar-nav navbar-right">
+      <% if current_user %>
+        <div class="input-group createlogout-btn navbar-right">
+          <div class="">
+            <div>
+              <a type="button" class="btn btn-primary navbar-btn navbar-right-create" href="">Create Flashcards</a>
+              <a type="button" class="btn btn-primary navbar-btn navbar-right" href="/logout">Log Out</a>
+            </div>
+          </div>
+        </div>
+      <% else %>
+        <div class="input-group signuplogin-btn navbar-right">
+          <div class="">
+            <div>
+              <a type="button" class="btn btn-primary signup-navbar-btn" href="#" data-toggle="modal" data-target="#basicModal">Sign Up</a>&nbsp;&nbsp;
+              <%= render 'users/user_modal' %>
+              <a type="button" class="btn btn-primary login-navbar-btn" href="#" data-toggle="modal" data-target="#login-basicModal">Log In</a>
+              <%= render 'sessions/login_modal' %>
+            </div>
+          </div>
+        </div>
+        <div class="error">
+        <div class="col-md-4"></div><div class="col-md-4"></div>
+        <% flash.each do |key, value| %>
+        <div class="col-md-4">
+          <div class='alert alert-dismissible alert-<%= key %>' role='danger'> 
+          <%= value %>
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span>
+          </button>
+          </div>
+        </div>
+        <% end %>
+        </div>
+      <% end %>
+    </ul>
+  </div>
+</div>

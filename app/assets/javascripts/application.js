@@ -14,10 +14,11 @@
 //= require jquery_ujs
 //= require bootstrap-sprockets
 //= require_tree .
-
+  $(document).ready(function(){
     $('.flip').click(function(){
         $(this).find('.card').addClass('flipped').mouseleave(function(){
             $(this).removeClass('flipped');
         });
         return false;
-    });
+      });
+  })
