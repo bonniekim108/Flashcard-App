@@ -1,11 +1,12 @@
-if Rails.env.production?
+
   CarrierWave.configure do |config|
     config.fog_credentials = {
       # Configuration for Amazon S3
       :provider              => 'AWS',
-      :aws_access_key_id     => ENV['AKIAJOSEJKGRDNOYZTLA'],
-      :aws_secret_access_key => ENV['yxF+cBGUSrS6Nt2qbNiFcoMPaSWLjqCDK1gZ3DPk']
+      :aws_access_key_id     => "placeholder",
+      :aws_secret_access_key => "placeholder",
+      :region                => "placeholder",
     }
-    config.fog_directory     =  ENV['bewordy-app']
+    config.fog_directory     =  "placeholder"
   end
-end
+
