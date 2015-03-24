@@ -1,4 +1,10 @@
 <div class="user-new">
+  <% flash.each do |key, value| %>
+  <div class='alert alert-<%= key %>' role='alert'>
+    <%= value %>
+  </div>
+<% end %>
+
   <%= form_for User.new do |f| %>
     <%= f.text_field :username, placeholder: "username", class: 'form-control' %>
     <br><br>
