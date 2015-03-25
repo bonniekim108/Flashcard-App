@@ -4,6 +4,12 @@
  $('#basicModal').modal('show');
 </script>
 <% end %>
+
+<% if flash[:login_modal] %>
+<script>
+ $('#login-basicModal').modal('show');
+</script>
+<% end %>
 <div class="col-md-12 landing-page-container">
   <div class="title">
     <h1>simply&nbsp;vocab</h1>

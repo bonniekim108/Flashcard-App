@@ -45,6 +45,7 @@ body {
   margin-right: 20px;
 }
 
+
 .navbar-fixed-top {
   height: 55px;
   background-color: black;
@@ -69,6 +70,15 @@ body {
       font-size: 28px;
       color: white;
     }
+
+    img {
+      margin-top: 5px;
+      height: 80px;
+      width: 80px;
+      // position: relative;
+    }
+
+
   }
 }
 
@@ -413,4 +423,5 @@ h1 {
 
   }
 }
+
 

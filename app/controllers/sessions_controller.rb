@@ -10,7 +10,8 @@ class SessionsController < ApplicationController
 			redirect_to user_path(current_user.id)
 		else
 			flash.now[:danger] = "Username or password incorrect."
-			redirect_to root_path
+			@login = false
+			redirect_to root_path, flash: { login_modal: true }
 		end
 	end
 
