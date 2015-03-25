@@ -17,7 +17,8 @@ class UsersController < ApplicationController
 			redirect_to flashcards_path
 		else
 			flash.now[:danger] = "Invalid form."
-			redirect_to root_path
+			@signup = false
+			redirect_to root_path, flash: { manifesto_modal: true }
 		end
 	end
 
