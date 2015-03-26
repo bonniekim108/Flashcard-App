@@ -1,4 +1,5 @@
-  Simply Vocab is a website where its users can search for vocabulary and then create their own
+
+Simply Vocab is a website where its users can search for vocabulary and then create their own
 vocabulary flashcards. The vocabulary search returns the definition of the word, as well as an example of the word found 
 in various sources, including literature and slang. Simply Vocab was inspired by the desire to create a resource that would 
 enable English learners, especially, to learn vocabulary effectively and easily. 
